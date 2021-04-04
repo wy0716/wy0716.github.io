@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="最快速的搭建个人博客, ywy">
+    <meta name="keywords" content="什么是进程、线程、协程，他们之间的关系是怎样的, ywy">
     <meta name="description" content="分享生活">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>最快速的搭建个人博客 | ywy</title>
+    <title>什么是进程、线程、协程，他们之间的关系是怎样的 | ywy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">最快速的搭建个人博客</h1>
+                    <h1 class="description center-align post-title">什么是进程、线程、协程，他们之间的关系是怎样的</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-03
+                    2021-04-04
                 </div>
                 
 
@@ -468,12 +468,185 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网站搭建"><a href="#网站搭建" class="headerlink" title="网站搭建"></a>网站搭建</h1><h2 id="需要的编辑软件"><a href="#需要的编辑软件" class="headerlink" title="需要的编辑软件"></a>需要的编辑软件</h2><ul>
-<li>Typora<br>个人建议在国内网站上下载</li>
-<li>VS code</li>
+                <h1 id="1-什么是进程、线程、协程，他们之间的关系是怎样的？"><a href="#1-什么是进程、线程、协程，他们之间的关系是怎样的？" class="headerlink" title="1. 什么是进程、线程、协程，他们之间的关系是怎样的？"></a>1. 什么是进程、线程、协程，他们之间的关系是怎样的？</h1><ul>
+<li>进程<br>本质上是一个独立执行的程序，进程是操作系统进行资源分配和调度的基本概念，操作系统进行资源分配和调度的一个独立单位。</li>
+<li>线程：<br>是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一个进程中可以并发多个线程，每条线程执行不同的任务，切换受系统控制。</li>
+<li>协程：<br>又称为微线程，是一种用户态的轻量级线程，协程不像线程和进程需要进行系统内核上的上下文切换，协程的上下文切换是由用户自己决定的，有自己的上下文，所以说是轻量级的线程，也称之为用户级别的线程就叫协程，一个线程可以多个协程，线程进程都是同步机制，而协程则是异步 。Java的原生语法中并没有实现协程，目前python、Lua和GO等语言支持</li>
+<li>关系：<br>一个进程可以有多个线程，它允许计算机同时运行两个或多个程序。线程是进程的最小执行单位，CPU的调度切换的是进程和线程，进程和线程多了之后调度会消耗大量的CPU，CPU上真正运行的是线程，线程可以对应多个协程：<br><img src="https://img-blog.csdnimg.cn/20210219180203873.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzU5MTk4MA==,size_16,color_FFFFFF,t_70"><h1 id="2-说下并发和并行的区别"><a href="#2-说下并发和并行的区别" class="headerlink" title="2. 说下并发和并行的区别"></a>2. 说下并发和并行的区别</h1></li>
+<li>并发 concurrency：<br>一核CPU，模拟出来多条线程，快速交替执行。</li>
+<li>并行 parallellism：<br>多核CPU ，多个线程可以同时执行；<br>eg： 线程池！<br>并发指在一段时间内宏观上去处理多个任务。并行指同一个时刻，多个任务确实真的同时运行。</li>
 </ul>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p> <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=196177503,3511850918&fm=26&gp=0.jpg">
- </p>
+<h1 id="3-java实现多线程有哪几种方式，有什么不同，比较常用哪种？"><a href="#3-java实现多线程有哪几种方式，有什么不同，比较常用哪种？" class="headerlink" title="3. java实现多线程有哪几种方式，有什么不同，比较常用哪种？"></a>3. java实现多线程有哪几种方式，有什么不同，比较常用哪种？</h1><h2 id="3-1继承Thread"><a href="#3-1继承Thread" class="headerlink" title="3.1继承Thread"></a>3.1继承Thread</h2><ul>
+<li>继承Thread，重写里面run()方法，创建实例，执行start</li>
+<li>优点：代码编写最简单直接操作</li>
+<li>缺点：没返回值，继承一个类后，没法继承其他的类，拓展性差</li>
+</ul>
+<pre><code>public class ThreadDemo1 extends Thread &#123;
+    @Override
+    public void run() &#123;
+        System.out.println(&quot;继承Thread实现多线程，名称：&quot;+Thread.currentThread().getName());
+    &#125;
+&#125;
+
+public static void main(String[] args) &#123;
+      ThreadDemo1 threadDemo1 = new ThreadDemo1();
+      threadDemo1.setName(&quot;demo1&quot;);
+      // 执行start
+      threadDemo1.start();
+      System.out.println(&quot;主线程名称：&quot;+Thread.currentThread().getName());
+&#125;
+</code></pre>
+<h2 id="3-2-实现Runnable接口"><a href="#3-2-实现Runnable接口" class="headerlink" title="3.2 实现Runnable接口"></a>3.2 实现Runnable接口</h2><ul>
+<li>自定义类实现Runnable，实现里面run()方法，创建Thread类，使用Runnable接口的实现对象作为参数传递给Thread对象，调用Strat方法。</li>
+<li>优点：线程类可以实现多个几接口，可以再继承一个类</li>
+<li>缺点：没返回值，不能直接启动，需要通过构造一个Thread实例传递进去启动</li>
+</ul>
+<pre><code>public class ThreadDemo2 implements Runnable &#123;
+    @Override
+    public void run() &#123;
+        System.out.println(&quot;通过Runnable实现多线程，名称：&quot;+Thread.currentThread().getName());
+    &#125;
+&#125;
+
+public static void main(String[] args) &#123;
+        ThreadDemo2 threadDemo2 = new ThreadDemo2();
+        Thread thread = new Thread(threadDemo2);
+        thread.setName(&quot;demo2&quot;);
+        // start线程执行
+        thread.start();
+        System.out.println(&quot;主线程名称：&quot;+Thread.currentThread().getName());
+&#125;
+
+// JDK8之后采用lambda表达式
+public static void main(String[] args) &#123;
+    Thread thread = new Thread(() -&gt; &#123;
+        System.out.println(&quot;通过Runnable实现多线程，名称：&quot;+Thread.currentThread().getName());
+    &#125;);
+    thread.setName(&quot;demo2&quot;);
+    // start线程执行
+    thread.start();
+    System.out.println(&quot;主线程名称：&quot;+Thread.currentThread().getName());
+&#125;
+</code></pre>
+<h2 id="3-3-实现Callable接口"><a href="#3-3-实现Callable接口" class="headerlink" title="3.3 实现Callable接口"></a>3.3 实现Callable接口</h2><ul>
+<li>创建callable接口的实现类，并实现call()方法，结合FutureTask类包装Callable对象，实现多线程。</li>
+<li>优点：有返回值，拓展性也高</li>
+<li>缺点：jdk5以后才支持，需要重写call()方法，结合多个类比如FutureTask和Thread类</li>
+</ul>
+<pre><code>public class MyTask implements Callable&lt;Object&gt; &#123;
+    @Override
+    public Object call() throws Exception &#123;
+        System.out.println(&quot;通过Callable实现多线程，名称：&quot;+Thread.currentThread().getName());
+        return &quot;这是返回值&quot;;
+    &#125;
+&#125;
+
+public static void main(String[] args) &#123;
+        // JDK1.8 lambda表达式
+        FutureTask&lt;Object&gt; futureTask = new FutureTask&lt;&gt;(() -&gt; &#123;
+          System.out.println(&quot;通过Callable实现多线程，名称：&quot; +
+                                    Thread.currentThread().getName());
+            return &quot;这是返回值&quot;;
+        &#125;);
+
+         // MyTask myTask = new MyTask();
+        // FutureTask&lt;Object&gt; futureTask = new FutureTask&lt;&gt;(myTask);
+        // FutureTask继承了Runnable，可以放在Thread中启动执行
+        Thread thread = new Thread(futureTask);
+        thread.setName(&quot;demo3&quot;);
+        // start线程执行
+        thread.start();
+        System.out.println(&quot;主线程名称:&quot;+Thread.currentThread().getName());
+        try &#123;
+            // 获取返回值
+            System.out.println(futureTask.get());
+        &#125; catch (InterruptedException e) &#123;
+            // 阻塞等待中被中断，则抛出
+            e.printStackTrace();
+        &#125; catch (ExecutionException e) &#123;
+            // 执行过程发送异常被抛出
+            e.printStackTrace();
+        &#125;
+&#125;
+</code></pre>
+<h2 id="3-4-通过线程池创建线程"><a href="#3-4-通过线程池创建线程" class="headerlink" title="3.4 通过线程池创建线程"></a>3.4 通过线程池创建线程</h2><ul>
+<li>自定义Runnable接口，实现run方法，创建线程池，调用执行方法并传入对象</li>
+<li>优点：安全高性能，复用线程</li>
+<li>缺点： jdk5后才支持，需要结合Runnable进行使用</li>
+</ul>
+<pre><code>public class ThreadDemo4 implements Runnable &#123;
+    @Override
+    public void run() &#123;
+        System.out.println(&quot;通过线程池+runnable实现多线程，名称：&quot; +
+                           Thread.currentThread().getName());
+    &#125;
+&#125;
+
+public static void main(String[] args) &#123;
+        // 创建线程池
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        for(int i=0;i&lt;10;i++)&#123;
+            // 线程池执行线程任务
+            executorService.execute(new ThreadDemo4());
+        &#125;
+        System.out.println(&quot;主线程名称:&quot;+Thread.currentThread().getName());
+        // 关闭线程池
+        executorService.shutdown();
+&#125;
+</code></pre>
+<ul>
+<li>一般常用的Runnable 和 第四种线程池+Runnable，简单方便扩展，和高性能 (池化的思想)</li>
+</ul>
+<h2 id="3-5-Runable-Callable-Thread-三者区别？"><a href="#3-5-Runable-Callable-Thread-三者区别？" class="headerlink" title="3.5 Runable Callable Thread 三者区别？"></a>3.5 Runable Callable Thread 三者区别？</h2><ul>
+<li>Thread是一个抽象类，只能被继承，而Runable Callable是接口，需要实现接口中的方法</li>
+<li>继承Thread重写run()方法，实现Runable接口需要实现run()方法，而Callable是需要实现call()方法</li>
+<li>Thread和Runable 没有返回值，Callable 有返回值</li>
+<li>实现Runable 接口的类不能直接调用start()方法，需要new 一个Thread并发该实现类放入Thread，再通过新建的Thread实例来调用start()方法。</li>
+<li>实现Callable 接口的类需要借助FutureTask(将该实现类放入其中)，再将FutureTask实例放入Thread，再通过新建的Thread实例来调用start()方法。获取返回值只需要借助FutureTask实例调用get()方法即可！</li>
+</ul>
+<h2 id="4-线程的几个状态-生命周期-？"><a href="#4-线程的几个状态-生命周期-？" class="headerlink" title="4. 线程的几个状态(生命周期)？"></a>4. 线程的几个状态(生命周期)？</h2><ul>
+<li>线程有几个状态（6个）！</li>
+</ul>
+<pre><code>public enum State &#123;
+    /**
+     * 线程新生状态
+     */
+    NEW,
+    
+    /**
+     * 线程运行中
+     */
+    RUNNABLE,
+    
+    /**
+     * 线程阻塞状态
+     */
+    BLOCKED,
+    
+    /**
+     * 线程等待状态，死等
+     */
+    WAITING,
+    
+    /**
+     * 线程超时等待状态，超过一定时间就不再等
+     */
+    TIMED_WAITING,
+    
+    /**
+     * 线程终止状态，代表线程执行完毕
+     */
+    TERMINATED;
+&#125;
+</code></pre>
+<h2 id="线程状态转换流程图"><a href="#线程状态转换流程图" class="headerlink" title="线程状态转换流程图"></a>线程状态转换流程图</h2><p>  <img src="https://img-blog.csdnimg.cn/img_convert/beaa7e48bc313a6c743066b8bd497414.png"></p>
+<h2 id="6-Java中可以有哪些方法来保证线程安全"><a href="#6-Java中可以有哪些方法来保证线程安全" class="headerlink" title="6. Java中可以有哪些方法来保证线程安全?"></a>6. Java中可以有哪些方法来保证线程安全?</h2><ul>
+<li>加锁：比如synchronize/ReentrantLock</li>
+<li>使用volatile声明变量，轻量级同步，不能保证原子性(需要解释)</li>
+<li>使用线程安全类，例如原子类 AtomicXXX等</li>
+<li>使用线程安全集合容器，例如：CopyOnWriteArrayList/ConcurrentHashMap等</li>
+<li>ThreadLocal本地私有变量/信号量Semaphore等</li>
+</ul>
 
                 
             </div>
@@ -500,7 +673,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wy0716.github.io/2021/04/03/%E6%9C%80%E5%BF%AB%E9%80%9F%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://wy0716.github.io/2021/04/03/%E6%9C%80%E5%BF%AB%E9%80%9F%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</a>
+                    <a href="https://wy0716.github.io/2021/04/04/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%EF%BC%8C%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84/">https://wy0716.github.io/2021/04/04/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%EF%BC%8C%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,8 +711,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -711,9 +884,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04/04/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%EF%BC%8C%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84/">
                     <div class="card-image">
@@ -731,9 +905,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -742,6 +916,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -760,13 +935,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/03/hello-world/">
+                <a href="/2021/04/03/%E6%9C%80%E5%BF%AB%E9%80%9F%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="最快速的搭建个人博客">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">最快速的搭建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,6 +961,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
                 </div>
                 
             </div>
